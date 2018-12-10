@@ -20,7 +20,7 @@
       {
         const spotLight = new THREE.SpotLight(0xFFFFFF, 4, 2000, Math.PI / 5, 0.2, 1.5);
         spotLight.position.set(500, 300, 500);
-        spotLight.castShadow = true; // 影を落とす設定
+        spotLight.castShadow = true;
         spotLight.shadow.mapSize.width = 2048;
         spotLight.shadow.mapSize.height = 2048;
         scene.add(spotLight);
@@ -29,8 +29,8 @@
       {
 
         const texture = new THREE.TextureLoader().load('imgs/floor.png');
-        texture.wrapS = texture.wrapT = THREE.RepeatWrapping; // リピート可能に
-        texture.repeat.set(10, 10); // 10x10マスに設定
+        texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+        texture.repeat.set(10, 10);
         texture.magFilter = THREE.NearestFilter;
         const floor = new THREE.Mesh(
           new THREE.PlaneGeometry(1000, 1000),
