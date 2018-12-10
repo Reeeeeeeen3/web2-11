@@ -47,14 +47,17 @@
           roughness: 0.1,
           metalness: 0.2
         });
-        const geometry = new THREE.TorusGeometry( 45, 45, 45, 145 );
+        const geometry = new THREE.TorusGeometry( 30, 9, 48, 300 );
 	      
         for (let i = 0; i < 60; i++) {
           const torus = new THREE.Mesh(geometry, material);
           torus.position.x = Math.round((Math.random() - 0.5) * 19) * 50 + 25;
           torus.position.y = 25;
           torus.position.z = Math.round((Math.random() - 0.5) * 19) * 50 + 25;
-   
+	  torus.rotation.x = Math.random() * 2 * Math.PI;
+       	  torus.rotation.y = Math.random() * 2 * Math.PI;
+   	  torus.rotation.z = Math.random() * 2 * Math.PI;
+		
           torus.receiveShadow = true;
           torus.castShadow = true;
           scene.add( torus );
