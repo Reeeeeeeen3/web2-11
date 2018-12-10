@@ -43,21 +43,21 @@
 
       {
         const material = new THREE.MeshStandardMaterial({
-          color: 0x2299FF,
+          color: 0x00FF00,
           roughness: 0.1,
           metalness: 0.2
         });
-        const geometry = new THREE.BoxGeometry(45, 45, 45);
-
+        const geometry = new THREE.TorusGeometry( 10, 3, 16, 100 );
+	      
         for (let i = 0; i < 60; i++) {
-          const box = new THREE.Mesh(geometry, material);
-          box.position.x = Math.round((Math.random() - 0.5) * 19) * 50 + 25;
-          box.position.y = 25;
-          box.position.z = Math.round((Math.random() - 0.5) * 19) * 50 + 25;
-          // 影の設定
-          box.receiveShadow = true;
-          box.castShadow = true;
-          scene.add(box);
+          const torus = new THREE.Mesh(geometry, material);
+          torus.position.x = Math.round((Math.random() - 0.5) * 19) * 50 + 25;
+          torus.position.y = 25;
+          torus.position.z = Math.round((Math.random() - 0.5) * 19) * 50 + 25;
+   
+          torus.receiveShadow = true;
+          torus.castShadow = true;
+          scene.add( torus );
         }
       }
       tick();
